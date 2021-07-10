@@ -1,0 +1,66 @@
+html, body {
+    width: 320px;
+    font-family: 'PontoFont';
+    font-size: 14px;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none;    
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+body {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    overflow: hidden;
+    text-align: center;
+    background: url('../img/background.png') no-repeat;     
+}
+
+td {
+    height: 25px
+}
+
+#score {
+    width: 321px;
+    position: absolute; 
+    margin: 0px 0px 0px 0px;
+    left: 0px;
+    top: 298px;
+    clear: both;
+}
+
+.person {
+    width: 70px;
+    text-align: left;
+}
+
+#btnVoltar {
+    float: right;
+}
+
+#btnReiniciar {
+    float: left;
+}
+
+#tdSpace {
+    width: 50px;
+}
+
+#board {
+    position: absolute;
+    top: 59px;
+    left: 0px;
+    width: 320px;
+    height: 280px;
+}
+
+#tbScore  {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#buttons {
+    position: absolute;
+    width: 320px;
+    top: 325px;
+}

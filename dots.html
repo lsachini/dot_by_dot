@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="viewport" content="width=321, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />	
+    <head>
+	    <title>Ponto a Ponto</title>
+        <link href="css/components.css" type="text/css" rel="stylesheet">
+        <link href="css/dots.css" type="text/css" rel="stylesheet">    
+        <link href="css/dialog.css" type="text/css" rel="stylesheet"> 
+	</head>
+	<body onload="dots.makeBoard()">
+	    <div id="board" name="board">
+		</div>
+        <div id="score" name="score">
+            <table border="0" cellpadding="5" cellspacing="0" id="tbScore">
+                <tr>
+                    <td id="tdPlayerLabel" class="person"></td>
+                    <td id="tdPlayer" class="score"></td>
+                    <td id="tdSpace"></td>                    
+                    <td id="tdOpponentLabel" class="person"></td>
+                    <td id="tdOpponent" class="score"></td>
+                </tr> 
+            </table>
+        </div>
+        <div id="buttons">
+            <div id="btnReiniciar" class="button button-medium">&nbsp;</div>
+            <div id="btnVoltar" class="button button-medium">&nbsp;</div>
+            &nbsp;
+        </div>
+        <script type="text/javascript" src="js/fastbutton.js" charset="iso-8859-1"></script>
+        <script type="text/javascript" src="js/options.js" charset="iso-8859-1"></script>
+        <script type="text/javascript" src="js/ranking.js" charset="iso-8859-1"></script>        
+        <script type="text/javascript" src="js/dotsGame.js" charset="iso-8859-1"></script>         
+        <script type="text/javascript" src="js/dialog.js" charset="iso-8859-1"></script>
+        <script type="text/javascript" src="js/util.js" charset="iso-8859-1"></script>
+        <script type="text/javascript" src="js/dots.js" charset="iso-8859-1"></script>      
+        <script type="text/javascript" charset="iso-8859-1" >
+            var dots = new Dots();  
+            var util = new Util();
+
+		    document.getElementById('btnReiniciar').innerHTML = util.getStringFromKey('restart');
+    		document.getElementById('btnVoltar').innerHTML = util.getStringFromKey('back');
+    		document.getElementById('tdPlayerLabel').innerHTML = util.getStringFromKey('player') + ':';
+    		document.getElementById('tdOpponentLabel').innerHTML = util.getStringFromKey('opponent') + ':';
+    		document.getElementById('tdPlayer').innerHTML = '0';
+    		document.getElementById('tdOpponent').innerHTML = '0';
+            
+            new FastButton(document.getElementById('btnReiniciar'), dots.again, false, true);
+            new FastButton(document.getElementById('btnVoltar'), dots.back, false, true);   
+        </script>
+	</body>
+</html>

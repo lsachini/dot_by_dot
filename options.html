@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="viewport" content="width=321, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />	
+    <head>
+	    <title>Ponto a Ponto</title>
+		<link href="css/options.css" type="text/css" rel="stylesheet">
+        <link href="css/dialog.css" type="text/css" rel="stylesheet">
+        <link href="css/components.css" type="text/css" rel="stylesheet">        
+	</head>
+	<body onload="options.init()">
+        <table  border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td id="tdBoardLabel">&nbsp;</td>
+                <td>
+                    <select id="boardSize" disabled class="combo">
+                        <option value="5x5">5 x 5</option>
+                        <option value="6x6">6 x 6</option>
+                        <option value="7x7" selected>7 x 7</option>
+                        <!--option value="8x8">8 x 8</option-->                        
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td id="tdPlayerColorLabel">&nbsp;</td>
+                <td>
+                    <select id="playerColor" disabled class="combo">
+                    </select>
+                </td>
+            </tr> 
+            <tr>
+                <td id="tdOpponentColorLabel">&nbsp;</td>
+                <td>
+                    <select id="opponentColor" disabled class="combo">
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td id="tdFirstMoveLabel">&nbsp;</td>
+                <td>
+                    <select id="firstMove" disabled class="combo">
+                    </select>
+                </td>
+            </tr>    
+            <tr>
+                <td id="tdDifficultyLabel">&nbsp;</td>
+                <td>
+                    <select id="difficulty" disabled class="combo">
+                    </select>
+                </td>
+            </tr>            
+        </table>
+        <br>
+        <div id="btnSalvar" class="button button-medium">&nbsp;</div>
+        <div id="btnVoltar" class="button button-medium">&nbsp;</div>
+        <script type="text/javascript" src="js/fastbutton.js" charset="iso-8859-1"></script>         
+        <script type="text/javascript" src="js/dialog.js" charset="iso-8859-1"></script>                 
+        <script type="text/javascript" src="js/util.js" charset="iso-8859-1"></script>
+		<script type="text/javascript" src="js/options.js" charset="iso-8859-1"></script>  
+        <script type="text/javascript" charset="iso-8859-1">
+            var options = new Options();
+            var util = new Util();
+
+			var playerColor = document.getElementById('playerColor');
+
+			playerColor[playerColor.length] = new Option(util.getStringFromKey('red'), 'red');
+			playerColor[playerColor.length] = new Option(util.getStringFromKey('green'), 'green');
+			playerColor[playerColor.length] = new Option(util.getStringFromKey('blue'), 'blue');
+
+			var opponentColor = document.getElementById('opponentColor');
+
+			opponentColor[opponentColor.length] = new Option(util.getStringFromKey('red'), 'red');
+			opponentColor[opponentColor.length] = new Option(util.getStringFromKey('green'), 'green');
+			opponentColor[opponentColor.length] = new Option(util.getStringFromKey('blue'), 'blue');
+
+			var firstMove = document.getElementById('firstMove');
+
+			firstMove[firstMove.length] = new Option(util.getStringFromKey('player'), 'player');
+			firstMove[firstMove.length] = new Option(util.getStringFromKey('opponent'), 'opponent');
+
+			var difficulty = document.getElementById('difficulty');
+
+			difficulty[difficulty.length] = new Option(util.getStringFromKey('normal'), 'normal');
+			difficulty[difficulty.length] = new Option(util.getStringFromKey('hard'), 'hard');
+
+		    document.getElementById('tdBoardLabel').innerHTML = util.getStringFromKey('board') + ':';
+    		document.getElementById('tdPlayerColorLabel').innerHTML = util.getStringFromKey('playerColor') + ':';
+    		document.getElementById('tdOpponentColorLabel').innerHTML = util.getStringFromKey('opponentColor') + ':';
+    		document.getElementById('tdFirstMoveLabel').innerHTML = util.getStringFromKey('firstMove') + ':';
+    		document.getElementById('tdDifficultyLabel').innerHTML = util.getStringFromKey('difficulty') + ':';
+    		document.getElementById('btnSalvar').innerHTML = util.getStringFromKey('save');
+    		document.getElementById('btnVoltar').innerHTML = util.getStringFromKey('back');
+			            
+            new FastButton(document.getElementById('btnSalvar'), options.saveValues, false, true); 
+            new FastButton(document.getElementById('btnVoltar'), options.back, false, true); 
+        </script>
+	</body>
+</html>

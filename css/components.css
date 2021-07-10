@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'PontoFont';
+    src: url('../fonts/ComicRelief.ttf'),
+         url("../fonts/ComicRelief.eot");
+}
+
+.button {
+    display: block;    
+    padding: 2px 20px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+	border-style:none;
+    margin-left: auto;
+    margin-right: auto;   
+    margin-top: 5px;
+    font-family: 'PontoFont';
+    font-style: italic;
+	/*color: black; text-shadow: #c2c2c2 -0.3em 0.3em 0.2em;*/
+	background-color:transparent;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;  
+    text-align: center;
+    cursor: pointer;
+}
+
+.button-big {
+    height: 18px;
+    line-height: 30px;
+    width: 200px;
+}
+
+.button-medium {
+	font-size: 18px;
+    height: 30px;
+    line-height: 30px;
+    width: 100px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+select {
+    /* necessário para setar altura do combo */
+    -webkit-appearance: listbox;
+}
+
+
+.combo {
+    border: 3px solid #000000;
+    width: 128px;
+    padding-left: 2px;
+    line-height: 30px;
+    height: 30px;
+    background-color: #FFFFFF;
+    font-family: PontoFont;
+    font-size: 14px;
+}

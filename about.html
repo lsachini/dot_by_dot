@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="viewport" content="width=321, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />	
+    <head>
+	    <title>Ponto a Ponto</title>
+        <link href="css/components.css" type="text/css" rel="stylesheet">
+        <link href="css/about.css" type="text/css" rel="stylesheet">
+    </head>
+	<body>
+        <div id="divLogo">
+            <img id="logo">
+        </div>
+        <table cellspacing="0" cellpadding="0" border="0">
+            <tr>
+                <td></td>
+                <td id="tdVersion"></td>
+            </tr>
+            <tr>
+                <td id="tdProgrammers"></td>
+                <td>Leandro Sachini</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Rodrigo Scalco</td>
+            </tr>            
+            <tr>
+                <td>Designer:</td>
+                <td>Flávia Moraes</td>
+            </tr>     
+        </table>
+        <div id="btnVoltar" class="button button-medium">&nbsp;</div>
+        <script type="text/javascript" src="js/fastbutton.js"  charset="iso-8859-1"></script>        
+        <script type="text/javascript" src="js/util.js"  charset="iso-8859-1"></script>
+        <script type="text/javascript" src="js/about.js"  charset="iso-8859-1"></script>  
+        <script type="text/javascript" charset="iso-8859-1">
+            var about = new About();
+            var util = new Util();
+            
+            document.getElementById('logo').src = 'img/' + util.getStringFromKey('logo');
+            document.getElementById('tdVersion').innerHTML = util.getStringFromKey('version');
+            document.getElementById('tdProgrammers').innerHTML = util.getStringFromKey('programmers') + ':';                        
+    		document.getElementById('btnVoltar').innerHTML = util.getStringFromKey('back');
+            
+            new FastButton(document.getElementById('btnVoltar'), about.back, false, true); 
+        </script>            
+	</body>
+</html>

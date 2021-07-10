@@ -1,0 +1,80 @@
+body {
+    font-family: 'PontoFont';
+    font-size: 20px;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none;    
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+body {
+    width: 320px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    overflow: hidden;
+    text-align: center;
+    background: url('../img/background.png') no-repeat; 
+}
+
+table {
+    width: 305px;
+}
+
+#tbOptions {
+    margin-top: 83px;
+}
+
+#tbRanking {
+    margin-top: 8px;
+}
+
+
+#tbOptions,
+#tbRanking {
+    margin-left: 15px;
+}
+
+#tdBoard  {
+    width: 100px;
+    text-align: right;
+}
+
+#boardType {
+    width: 100px;
+}
+
+td {
+    height: 25px;
+    vertical-align: bottom;
+}
+
+.tdPosition {
+    width: 50px;
+    text-align: center;
+}
+
+.tdName,
+#tdNameTitle {
+    text-align: left;
+}
+
+.trClass {
+    height: 35px;
+}
+
+.trTitle {
+    font-weight: bold;
+}
+
+#btnVoltar,
+#btnLimpar {
+    margin-top: -23px;
+}
+
+#btnVoltar {
+    float: right;
+}
+
+#btnLimpar {
+    float: left;
+}

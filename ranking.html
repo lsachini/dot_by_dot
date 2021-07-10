@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="viewport" content="width=321, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />	
+    <head>
+	    <title>Ponto a Ponto</title>
+        <link href="css/ranking.css" type="text/css" rel="stylesheet">
+        <link href="css/components.css" type="text/css" rel="stylesheet">  
+        <link href="css/dialog.css" type="text/css" rel="stylesheet">      
+	</head>
+	<body onload="ranking.populateTable()">
+        <table id="tbOptions" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+                <td id="tdBoard"  class="tdEnd"></td>
+                <td id="tdBoardType" class="tdEnd">
+                    <select id="boardType" onchange="ranking.populateTable()" class="combo">
+                        <option value="ranking5x5" selected>5 x 5</option>
+                        <option value="ranking6x6">6 x 6</option>
+                        <option value="ranking7x7">7 x 7</option>
+                        <!--option value="ranking8x85">8 x 8</option-->                
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <table id="tbRanking" cellspacing="0" cellpadding="0" border="0">
+            <tr class="trTitle">
+                <td id="tdPositionTitle">#</td>
+                <td id="tdNameTitle"></td>
+                <td id="tdScoreTitle"></td>
+            </tr>        
+            <tr class="trClass">
+                <td name="tdPosition" class="tdPosition">1</td>
+                <td name="tdName" class="tdName"></td>
+                <td name="tdScore"></td>
+            </tr>
+            <tr class="trClass">
+                <td name="tdPosition" class="tdPosition">2</td>
+                <td name="tdName" class="tdName"></td>
+                <td name="tdScore"></td>
+            </tr>
+            <tr class="trClass">
+                <td name="tdPosition" class="tdPosition">3</td>
+                <td name="tdName" class="tdName"></td>
+                <td name="tdScore"></td>
+            </tr>
+            <tr class="trClass">
+                <td name="tdPosition" class="tdPosition">4</td>
+                <td name="tdName" class="tdName"></td>
+                <td name="tdScore"></td>
+            </tr>
+            <tr class="trClass">
+                <td name="tdPosition" class="tdPosition tdEnd">5</td>
+                <td name="tdName" class="tdName tdEnd"></td>
+                <td name="tdScore" class="tdEnd"></td>
+            </tr>
+        </table> 
+        <br>        
+        <div id="btnLimpar" class="button button-medium">&nbsp;</div>          
+        <div id="btnVoltar" class="button button-medium">&nbsp;</div>        
+        <script type="text/javascript" src="js/fastbutton.js" charset="iso-8859-1"></script>
+        <script type="text/javascript" src="js/dialog.js" charset="iso-8859-1"></script>
+        <script type="text/javascript" src="js/util.js" charset="iso-8859-1"></script>
+        <script type="text/javascript" src="js/ranking.js" charset="iso-8859-1"></script>      
+        <script type="text/javascript" charset="iso-8859-1">
+            var ranking = new Ranking();
+            var util = new Util();
+        
+    		document.getElementById('btnLimpar').innerHTML = util.getStringFromKey('clean');
+    		document.getElementById('btnVoltar').innerHTML = util.getStringFromKey('back');
+    		document.getElementById('tdBoard').innerHTML = util.getStringFromKey('board');
+    		document.getElementById('tdNameTitle').innerHTML = util.getStringFromKey('name');
+    		document.getElementById('tdScoreTitle').innerHTML = util.getStringFromKey('score');        
+        
+            new FastButton(document.getElementById('btnVoltar'), ranking.back, false, true);
+            new FastButton(document.getElementById('btnLimpar'), ranking.clean, false, true); 
+        </script>
+	</body>
+</html>

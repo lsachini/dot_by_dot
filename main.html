@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="viewport" content="width=321, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />	
+    <head>
+	    <title>Ponto a Ponto</title>
+        <link href="css/main.css" type="text/css" rel="stylesheet">
+        <link href="css/components.css" type="text/css" rel="stylesheet">        
+	</head>
+	<body>
+        <div id="main" name="main">
+            <img id="logo"><br>
+            <div id="btn1Jogador" class="button button-big">&nbsp;</div>
+            <div id="btn2Jogadores" class="button button-big">&nbsp;</div>            
+            <div id="btnRanking" class="button button-big">&nbsp;</div>            
+            <div id="btnOpcoes" class="button button-big">&nbsp;</div>
+        </div>
+        <script type="text/javascript" src="js/fastbutton.js" charset="iso-8859-1"></script>
+        <script type="text/javascript" src="js/util.js" charset="iso-8859-1"></script>
+        <script type="text/javascript" src="js/main.js"  charset="iso-8859-1"></script>   
+        <script type="text/javascript" charset="iso-8859-1">
+            var main = new Main();
+            var util = new Util();
+            
+            document.getElementById('logo').src = 'img/' + util.getStringFromKey('logo');
+		    document.getElementById('btn1Jogador').innerHTML = util.getStringFromKey('1player');
+    		document.getElementById('btn2Jogadores').innerHTML = util.getStringFromKey('2players');
+    		document.getElementById('btnRanking').innerHTML = util.getStringFromKey('ranking');
+    		document.getElementById('btnOpcoes').innerHTML = util.getStringFromKey('options');
+                        
+            new FastButton(document.getElementById('logo'), main.goAbout, false, false); 
+            new FastButton(document.getElementById('btn1Jogador'), function () { main.startGame('1p'); }, false, true); 
+            new FastButton(document.getElementById('btn2Jogadores'), function () { main.startGame('2p'); }, false, true);
+            new FastButton(document.getElementById('btnRanking'), main.goRanking, false, true);    
+            new FastButton(document.getElementById('btnOpcoes'), main.goOptions, false, true); 
+        </script>            
+	</body>
+</html>
